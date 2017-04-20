@@ -1,0 +1,16 @@
+<div id="layout-vertical-navigation-fullwidth-toolbar-2" class="template-layout" layout="column" flex>
+ <md-toolbar id="toolbar" class="" ui-view="toolbar"></md-toolbar>
+ <div id="main-container" layout="row" flex>
+  <md-sidenav id="vertical-navigation" class="md-hue-3"
+              md-component-id="navigation" ms-scroll ui-view="navigation"></md-sidenav>
+  <div id="content-container" flex layout="column">
+   <md-content id="content" class="md-hue-3" ms-scroll ui-view="content" flex></md-content>
+  </div>
+  <md-sidenav id="quick-panel" class="md-sidenav-right md-whiteframe-4dp" md-component-id="quick-panel" ms-scroll
+              ui-view="quickPanel"></md-sidenav>
+  <md-sidenav id="login-panel" class="md-sidenav-right md-whiteframe-4dp" md-component-id="login-panel" ms-scroll
+              ui-view="loginPanel"></md-sidenav>
+  <md-sidenav id="registration-panel" class="md-sidenav-right md-whiteframe-4dp" md-component-id="registration-panel" ms-scroll
+              ui-view="registrationPanel"></md-sidenav>
+ </div>
+</div>

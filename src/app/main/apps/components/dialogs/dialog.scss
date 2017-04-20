@@ -1,0 +1,117 @@
+md-dialog {
+
+}
+
+.checklist-menu-content {
+ padding: 8px 16px 16px 16px;
+
+ md-input-container {
+  width: 100%;
+  margin: 8px 0 8px 0;
+ }
+
+ .md-button {
+  margin: 8px 0 0 0;
+ }
+}
+
+.labels-menu-content {
+ position: relative;
+ padding: 4px 0;
+ max-height: 400px;
+
+ md-tabs-wrapper {
+  height: 0;
+  overflow: hidden;
+ }
+
+ md-tabs-content-wrapper {
+  top: 0;
+ }
+
+ md-input-container {
+
+  input {
+   font-size: 16px;
+  }
+ }
+
+ .label {
+  padding: 4px 16px;
+
+  .label-toggle-button {
+   font-size: 13px;
+  }
+
+  .label-edit-button {
+   margin: 0 0 0 8px;
+   padding: 0;
+
+   md-icon {
+    margin: 0 auto;
+   }
+  }
+ }
+
+ md-menu-divider {
+  display: block;
+ }
+
+ .add-label-tab-content,
+ .edit-label-tab-content {
+
+  .header {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .content {
+   padding: 0 16px 8px 16px;
+
+   .label-color-picker {
+    width: 240px;
+    margin: 0 -4px 0 2px;
+
+    .color {
+     width: 24px;
+     height: 24px;
+     margin: 0 6px 6px 0;
+     cursor: pointer;
+    }
+   }
+
+   .create-button {
+    margin: 16px 0 8px 0;
+   }
+  }
+ }
+}
+
+.members-menu-content {
+ position: relative;
+ padding: 4px 0;
+ max-height: 400px;
+
+ md-input-container {
+
+  input {
+   font-size: 16px;
+  }
+ }
+
+ .member {
+
+  .md-button {
+
+   .avatar {
+    margin-right: 16px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+   }
+
+   .member-name {
+    font-size: 13px;
+   }
+  }
+ }
+}

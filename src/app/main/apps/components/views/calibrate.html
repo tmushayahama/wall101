@@ -1,0 +1,22 @@
+<div class="gb-cat-holder-calibrate"  layout="column" layout-align="center center">
+ <img id="ct-calibrate-img" ng-src="src/assets/images/animals/{{calibrateCtrl.component.component_picture_url}}" alt=""
+      ng-click="calibrateCtrl.calibrateComponent($event)"
+      ng-style="calibrateCtrl.component.pictureStyle">
+</div>
+<div class="ct-food-row">
+ <div class="" layout="row" layout-align="start center" flex>
+  <div class="p-8" ng-repeat="food in calibrateCtrl.foods.options" layout-fill>
+   <div class="ct-widget-food-item"
+        layout="column" layout-align="center center"
+        ng-class="{'active': calibrateCtrl.foods.selected.animal === food.animal}"
+        ng-click="calibrateCtrl.chooseFood(food)" flex="25">
+    <img ng-src="src/assets/images/food/{{food.picture_url}}" alt="">
+   </div>
+  </div>
+ </div>
+</div>
+<div class="" layout="row" layout-align="center center" flex>
+ <md-button ng-click="calibrateCtrl.getComponent()">
+  Next
+ </md-button>
+</div>

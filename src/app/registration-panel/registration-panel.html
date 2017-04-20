@@ -1,0 +1,48 @@
+<md-content class="flex-scrollable" layout="column" ms-scroll>
+ <div class="registration-form-wrapper" layout="column" layout-align="center center">
+  <div class="registration-form" class="md-whiteframe-8dp">
+   <div class="logo md-accent-bg">
+    <span>
+     <i class="fa icon-gb-logo"></i>
+    </span>
+   </div>
+   <div class="title">
+    I would love a Beta Invite.
+   </div>
+   <form name="registrationForm" novalidate ng-submit="vm.createInvite()">
+    <md-input-container class="md-block" md-no-float>
+     <input type="email" name="email" ng-model="vm.user.email" placeholder="Email"
+            ng-pattern="/^.+@.+\..+$/" required>
+     <div ng-messages="registrationForm.email.$error" role="alert" multiple>
+      <div ng-message="required">
+       <span>Email field is required</span>
+      </div>
+      <div ng-message="pattern">
+       <span>Email must be a valid e-mail address</span>
+      </div>
+     </div>
+    </md-input-container>
+    <md-input-container class="md-block" md-no-float>
+     <input type="text" name="firstname" ng-model="vm.user.firstname" placeholder="First Name"  required>
+     <div ng-messages="registrationForm.firstname.$error" role="alert" multiple>
+      <div ng-message="required">
+       <span>First Name field is required</span>
+      </div>
+     </div>
+    </md-input-container>
+    <md-input-container class="md-block" md-no-float>
+     <input type="text" name="lastname" ng-model="vm.user.lastname" placeholder="Last Name"  required>
+     <div ng-messages="registrationForm.lastname.$error" role="alert" multiple>
+      <div ng-message="required">
+       <span>Last Name field is required</span>
+      </div>
+     </div>
+    </md-input-container>
+    <md-button type="submit" class="md-raised md-accent submit-button" aria-label="Get Early Access"
+               ng-disabled="registrationForm.$invalid || registrationForm.$pristine">
+     Get Early Access
+    </md-button>
+   </form>
+  </div>
+ </div>
+</md-content>

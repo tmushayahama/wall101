@@ -1,0 +1,97 @@
+<div flex layout="row" layout-align="start">
+ <label for="ms-search-bar-input">
+  <md-button class="ms-search-bar-expander md-icon-button" aria-label="Expand Search Bar"
+             ng-click="MsSearchBar.expand()"
+             ng-if="!MsSearchBar.resultsLoading || MsSearchBar.collapsed">
+   <md-icon md-font-icon="icon-magnify" class="icon s24"></md-icon>
+  </md-button>
+  <div class="ms-search-bar-loader" layout="row" layout-align="center center"
+       ng-if="MsSearchBar.resultsLoading && !MsSearchBar.collapsed">
+   <md-progress-circular class="md-accent" md-diameter="32" md-mode="indeterminate"></md-progress-circular>
+  </div>
+ </label>
+ <input id="ms-search-bar-input" type="text" placeholder="Search" flex
+        ng-model="MsSearchBar.query"
+        ng-model-options="MsSearchBar.queryOptions"
+        ng-blur="MsSearchBar.collapse()"
+        ng-keydown="MsSearchBar.handleKeydown($event)">
+ <md-button class="ms-search-bar-collapser md-icon-button" ng-click="MsSearchBar.collapse()"
+            aria-label="Collapse Search Bar">
+  <md-icon md-font-icon="icon-close" class="icon s24"></md-icon>
+ </md-button>
+
+ <div class="ms-search-bar-results" ng-if="MsSearchBar.results" ms-scroll>
+  <div class="no-results" ng-if="MsSearchBar.results.length === 0">No Results!</div>
+
+
+  <div class="" layout="column" layout-align="start stretch" flex>
+   <div class="widget-group"
+        layout="row" layout-align="start" layout-wrap flex>
+    <ms-widget class="result p-8 gb-result-widget gb-widget-xs" ng-repeat="result in MsSearchBar.results"
+               layout="column" flex-gt-md="50" flex="100"  layout-fill>
+     <ms-widget-front  ng-click="MsSearchBar.handleResultClick(result)"
+                       ng-mouseenter="MsSearchBar.handleMouseenter($index)"
+                       ng-mousedown="MsSearchBar.absorbEvent($event)"
+                       ng-class="{'selected': $index == MsSearchBar.selectedResultIndex}"
+                       layout="row" flex layout-fill
+                       md-ink-ripple>
+      <div  layout="row" layout-align="start stretch" flex>
+       <div class="gb-title-icon {{result.type.background_color}}" layout-fill layout="row" layout-align="center center" flex>
+        <i class="fa icon {{result.type.icon}}"></i>
+       </div>
+       <div class="gb-widget-content" layout="column" layout-align="start stretch" flex>
+        <div class="gb-type-title">
+         <div class="gb-ellipsis">
+          {{result.type.title}}
+         </div>
+        </div>
+        <div class="gb-title">
+         <div class="gb-ellipsis">
+          <strong>{{result.title}}</strong> {{result.description}}
+         </div>
+        </div>
+        <div class="gb-description">
+         <div class="gb-ellipsis">
+          by {{result.creator.firstname + " " + result.creator.lastname}}
+         </div>
+        </div>
+       </div>
+      </div>
+     </ms-widget-front>
+    </ms-widget>
+   </div>
+  </div>
+
+  <div ng-if="false" class="result" ng-repeat="result in MsSearchBar.results"
+       ng-click="MsSearchBar.handleResultClick(result)"
+       ng-mouseenter="MsSearchBar.handleMouseenter($index)"
+       ng-mousedown="MsSearchBar.absorbEvent($event)"
+       ng-class="{'selected': $index == MsSearchBar.selectedResultIndex}"
+       flex-gt-md="50"
+       flex="100"
+       md-ink-ripple>
+   <div layout="row" layout-align="start center">
+    <div class="icon-container" ng-class="result.type.background_color" layout="row" layout-align="center center">
+     <i ng-if="result.type.icon" class="icon {{result.type.icon}}"></i>
+    </div>
+    <div>
+     <div class="type-title">
+      <div class="ellipsis">
+       {{result.type.title}}
+      </div>
+     </div>
+     <div class="title">
+      <div class="ellipsis">
+       {{result.title}}
+      </div>
+     </div>
+     <div class="description" ng-if="result.description">
+      <div class="ellipsis">
+       {{result.description}}
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

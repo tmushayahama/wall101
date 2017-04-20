@@ -1,0 +1,54 @@
+<md-content class="flex-scrollable" layout="column" ms-scroll>
+ <div class="login-form-wrapper" layout="column" layout-align="center center">
+  <div class="login-form" class="md-whiteframe-8dp">
+   <div class="logo md-accent-bg">
+    <span>
+     <i class="fa icon-gb-logo"></i>
+    </span>
+   </div>
+   <div class="title" translate="login.title">Log in to your account</div>
+
+   <form name="loginForm" novalidate ng-submit="vm.login()"">
+    <md-input-container class="md-block" md-no-float>
+     <input type="email" name="email" ng-model="vm.user.email" placeholder="Email"
+            translate translate-attr-placeholder="login.email"
+            ng-pattern="/^.+@.+\..+$/" required>
+     <div ng-messages="loginForm.email.$error" role="alert" multiple>
+      <div ng-message="required">
+       <span translate="login.errors.email_required">Email field is required</span>
+      </div>
+      <div ng-message="pattern">
+       <span translate="login.errors.email_must_valid">Email must be a valid e-mail address</span>
+      </div>
+     </div>
+    </md-input-container>
+    <md-input-container class="md-block" md-no-float>
+     <input type="password" name="password" ng-model="vm.user.password" placeholder="Password"
+            translate translate-attr-placeholder="login.password"
+            required>
+     <div ng-messages="loginForm.password.$error" role="alert">
+      <div ng-message="required">
+       <span translate="login.errors.password_required">Password field is required</span>
+      </div>
+     </div>
+    </md-input-container>
+
+    <div class="remember-forgot-password" layout="row" layout-xs="column"
+         layout-align="space-between center">
+     <md-checkbox class="remember-me" ng-model="data.cb1" aria-label="Remember Me">
+      <span translate="login.remember_me">Remember Me</span>
+     </md-checkbox>
+
+     <a ui-sref="app.pages_auth_forgot-password" class="forgot-password md-accent-color"
+        translate="login.forgot_password">Forgot Password?</a>
+    </div>
+
+    <md-button type="submit" class="md-raised md-accent submit-button" aria-label="log In"
+               ng-disabled="loginForm.$invalid || loginForm.$pristine"
+               translate="login.log_in" translate-attr-aria-label="login.log_in">
+     Log In
+    </md-button>
+   </form>
+  </div>
+ </div>
+</md-content>

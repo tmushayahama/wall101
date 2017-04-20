@@ -1,0 +1,20 @@
+{
+ "login" :{
+  "title" :"Log in to your account" ,
+  "email" :"Email" ,
+  "password" :"Password" ,
+  "remember_me" :"Remember Me" ,
+  "forgot_password" :"Forgot Password?" ,
+  "log_in" :"Log In" ,
+  "or" :"or" ,
+  "with_google" :"log in with google" ,
+  "with_facebook" :"log in with facebook" ,
+  "dont_have_account" :"don't have an account?" ,
+  "create_account" :"create an account" ,
+  "errors" :{
+   "email_required" :"Email field is required" ,
+   "email_must_valid" :"Email must be a valid e-mail address" ,
+   "password_required" :"Eassword field is required"
+  }
+ }
+}

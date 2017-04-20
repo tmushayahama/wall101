@@ -1,0 +1,22 @@
+<div class="gb-wall-canvas gb-day-1" layout="column" layout-align="start start" flex
+     ng-click="vm.getComponent($event)"
+     ng-class="vm.component.background_class">
+ <div class="gb-cat-holder"  layout="column" layout-align="center center">
+  <img ng-src="src/assets/images/animals/{{vm.component.component_picture_url}}" alt=""
+       ng-style="vm.component.pictureStyle">
+ </div>
+ <div ng-if="false" class="ct-food-row">
+  <div class="" layout="row" layout-align="start center" flex>
+   <div class="p-8" ng-repeat="food in vm.foods.options" layout-fill>
+    <div class="ct-widget-food-item"
+         layout="column" layout-align="center center"
+         ng-class="{
+            'active': vm.foods.selected.animal == = food.animal}"
+         ng-click="vm.chooseFood(food); $event.stopPropagation()" flex="25">
+     <img ng-src="src/assets/images/food/{{food.picture_url}}" alt="">
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="gb-wall"></div>
+</div>
