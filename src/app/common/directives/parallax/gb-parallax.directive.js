@@ -1,43 +1,68 @@
 (function ()
 {
-    'use strict';
+ 'use strict';
 
-    angular
-        .module('app.core')
-        .directive('msCard', msCardDirective);
+ angular
+         .module('app.common')
+         .directive('gbParallax', gbParallax)
+         .directive('gbParallaxBackground', gbParallaxBackground);
 
-    /** @ngInject */
-    function msCardDirective()
-    {
-        return {
-            restrict: 'E',
-            scope   : {
-                templatePath: '=template',
-                card        : '=ngModel',
-                vm          : '=viewModel'
-            },
-            template: '<div class="ms-card-content-wrapper" ng-include="templatePath" onload="cardTemplateLoaded()"></div>',
-            compile : function (tElement)
-            {
-                // Add class
-                tElement.addClass('ms-card');
+ /** @ngInject */
+ function gbParallax($window) {
+  return {
+   restrict: 'A',
+   scope: {
+    parallaxRatio: '@',
+    parallaxVerticalOffset: '@',
+    parallaxHorizontalOffset: '@',
+   },
+   link: function ($scope, elem, attrs) {
+    var setPosition = function () {
+     if (!$scope.parallaxHorizontalOffset)
+      $scope.parallaxHorizontalOffset = '0';
+     var calcValY = $window.pageYOffset * ($scope.parallaxRatio ? $scope.parallaxRatio : 1.1);
+     if (calcValY <= $window.innerHeight) {
+      var topVal = (calcValY < $scope.parallaxVerticalOffset ? $scope.parallaxVerticalOffset : calcValY);
+      var hozVal = ($scope.parallaxHorizontalOffset.indexOf("%") === -1 ? $scope.parallaxHorizontalOffset + 'px' : $scope.parallaxHorizontalOffset);
+      elem.css('transform', 'translate(' + hozVal + ', ' + topVal + 'px)');
+     }
+    };
 
-                return function postLink(scope, iElement)
-                {
-                    // Methods
-                    scope.cardTemplateLoaded = cardTemplateLoaded;
+    setPosition();
 
-                    //////////
+    angular.element($window).bind("scroll", setPosition);
+    angular.element($window).bind("touchmove", setPosition);
+   }  // link function
+  };
+ }
 
-                    /**
-                     * Emit cardTemplateLoaded event
-                     */
-                    function cardTemplateLoaded()
-                    {
-                        scope.$emit('msCard::cardTemplateLoaded', iElement);
-                    }
-                };
-            }
-        };
-    }
+ /** @ngInject */
+ function gbParallaxBackground($window) {
+  return {
+   restrict: 'A',
+   transclude: true,
+   template: '<div ng-transclude></div>',
+   scope: {
+    parallaxRatio: '@',
+    parallaxVerticalOffset: '@',
+   },
+   link: function ($scope, elem, attrs) {
+    var setPosition = function () {
+     var calcValY = (elem.prop('offsetTop') - $window.pageYOffset) * ($scope.parallaxRatio ? $scope.parallaxRatio : 1.1) - ($scope.parallaxVerticalOffset || 0);
+     // horizontal positioning
+     elem.css('background-position', "50% " + calcValY + "px");
+    };
+
+    // set our initial position - fixes webkit background render bug
+    angular.element($window).bind('load', function (e) {
+     setPosition();
+     $scope.$apply();
+    });
+
+    angular.element($window).bind("scroll", setPosition);
+    angular.element($window).bind("touchmove", setPosition);
+   }  // link function
+  };
+ }
+
 })();

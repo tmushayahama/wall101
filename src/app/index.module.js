@@ -14,6 +14,7 @@
           'ui.tree',
           // Core
           'app.core',
+          'app.common',
           'app.navigation',
           'app.toolbar',
           'app.login-panel',
