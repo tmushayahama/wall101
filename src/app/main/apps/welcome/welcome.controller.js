@@ -14,7 +14,7 @@
   // Data
   vm.componentService = ComponentService;
   vm.component = {};
-  vm.foods = ComponentService.foods;
+  vm.columns = ComponentService.columns;
   vm.currentPage = 0;
 
   //Method
@@ -24,10 +24,15 @@
   init();
 
   function init() {
-   chooseFood(vm.foods.options[0]);
-   ComponentService.getComponents(vm.foods.selected.animal, vm.currentPage).then(function (data) {
-   });
-
+   // chooseFood(vm.foods.options[0]);
+   //  ComponentService.getComponents(vm.foods.selected.animal, vm.currentPage).then(function (data) {
+   //  });
+   for (var i = 0; i < 20; i++) {
+    vm.columns.push({
+     'name': 'mouse',
+     'columnClass': 'colum-1',
+    })
+   }
   }
 
   function getComponents(animal, page) {

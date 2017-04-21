@@ -10,46 +10,10 @@
  function ComponentService(_, msApi, $q) {
   var service = {
    components: {},
-   foods: {
-    options: [
-     {
-      'name': 'mouse',
-      'picture_url': 'mouse.png',
-      'animal': {
-       "id": 2,
-       "name": "cat"
-      },
-      'total': 10
-     },
-     {
-      'name': 'treat',
-      'picture_url': 'treat.png',
-      'animal': {
-       "id": 3,
-       "name": "dog"
-      },
-      'total': 10
-     },
-     {
-      'name': 'worm',
-      'picture_url': 'worm.png',
-      'animal': {
-       "id": 4,
-       "name": "chicken"
-      },
-      'total': 10
-     },
-     {
-      'name': 'grass',
-      'picture_url': 'grass.png',
-      'animal': {
-       "id": 5,
-       "name": "cow"
-      },
-      'total': 10
-     }
-    ]
-   },
+   columns: [{
+     'name': 'mouse',
+     'columnClass': 'column-1',
+    }],
    //Methods
    getComponent: getComponent,
    getComponents: getComponents,

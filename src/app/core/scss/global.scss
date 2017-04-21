@@ -376,8 +376,9 @@ md-dialog {
 }
 .gb-horizontal-scroll {
  position:relative;
- &.gb-apps-scroll {
-  min-height: 226px;
+ &.gb-columns-scroll {
+  height: 100%;
+  min-height: 100%;
   .gb-card-component {
    max-width: 200px;
   }
