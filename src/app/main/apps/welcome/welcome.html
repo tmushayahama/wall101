@@ -29,6 +29,9 @@
         layout="row" layout-align="start" ms-scroll flex layout-nowrap>
     <div class="gb-column" ng-repeat="column in vm.columns"
          ng-class="column.columnClass">
+     <div gridster="gridsterOpts" class="gb-card-ads-1">
+      <div class="gb-card-ad-1" gridster-item="item" ng-repeat="item in standardItems"></div>
+     </div>
     </div>
    </div>
    <md-button class="gb-right-scroll"

@@ -12,6 +12,7 @@
           'textAngular',
           'xeditable',
           'ui.tree',
+          'gridster',
           // Core
           'app.core',
           'app.common',
