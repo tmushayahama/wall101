@@ -13,7 +13,38 @@
    columns: [{
      'name': 'mouse',
      'columnClass': 'column-1',
-    }],
+     "cards": [
+      {sizeX: 6, sizeY: 3, row: 0, col: 0},
+     ]
+    }, {
+     'name': 'mouse',
+     'columnClass': 'column-1',
+     "cards": []
+    }, {
+     'name': 'mouse',
+     'columnClass': 'column-1',
+     "cards": [
+      {sizeX: 3, sizeY: 2, row: 0, col: 0},
+      {sizeX: 2, sizeY: 1, row: 3, col: 0},
+     ]
+    }, {
+     'name': 'mouse',
+     'columnClass': 'column-1',
+     "cards": [
+      {sizeX: 3, sizeY: 2, row: 0, col: 0},
+      {sizeX: 3, sizeY: 2, row: 0, col: 3},
+      {sizeX: 6, sizeY: 3, row: 2, col: 0},
+      {sizeX: 2, sizeY: 1, row: 3, col: 0},
+     ]
+    }, {
+     'name': 'mouse',
+     'columnClass': 'column-1',
+     "cards": [
+      {sizeX: 3, sizeY: 2, row: 1, col: 1},
+     ]
+    }
+
+   ],
    //Methods
    getComponent: getComponent,
    getComponents: getComponents,

@@ -91,8 +91,9 @@ $color-6: #077568;
     max-width: 300px;
     overflow: hidden;
     .gb-card-ads-1 {
+     margin: 0;
      padding: 5px;
-     @include position(absolute, 50px 0 0 0);
+     @include position(absolute, 120px 4px 0 4px);
     }
     .gb-card-ad-1 {
      background-color: #FFF;

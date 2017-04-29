@@ -24,8 +24,8 @@
    swapping: false, // whether or not to have items of the same size switch places instead of pushing down if they are the same size
    width: 'auto', // can be an integer or 'auto'. 'auto' scales gridster to be the full width of its containing element
    colWidth: 'auto', // can be an integer or 'auto'.  'auto' uses the pixel width of the element divided by 'columns'
-   rowHeight: '40', // can be an integer or 'match'.  Match uses the colWidth, giving you square widgets.
-   margins: [5, 5], // the pixel distance between each widget
+   rowHeight: '50', // can be an integer or 'match'.  Match uses the colWidth, giving you square widgets.
+   margins: [8, 8], // the pixel distance between each widget
    outerMargin: false, // whether margins apply to outer edges of the grid
    sparse: false, // "true" can increase performance of dragging and resizing for big grid (e.g. 20x50)
    isMobile: false, // stacks the grid items if true
@@ -33,13 +33,13 @@
    mobileModeEnabled: false, // whether or not to toggle mobile mode when screen width is less than mobileBreakPoint
    minColumns: 1, // the minimum columns the grid must have
    minRows: 2, // the minimum height of the grid, in rows
-   maxRows: 100,
-   defaultSizeX: 2, // the default width of a gridster item, if not specifed
-   defaultSizeY: 1, // the default height of a gridster item, if not specified
+   maxRows: 6,
+   defaultSizeX: 3, // the default width of a gridster item, if not specifed
+   defaultSizeY: 2, // the default height of a gridster item, if not specified
    minSizeX: 1, // minimum column width of an item
-   maxSizeX: null, // maximum column width of an item
+   maxSizeX: 6, // maximum column width of an item
    minSizeY: 1, // minumum row height of an item
-   maxSizeY: null, // maximum row height of an item
+   maxSizeY: 6, // maximum row height of an item
    resizable: {
     enabled: true,
     handles: ['n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw'],
@@ -75,9 +75,12 @@
    //  ComponentService.getComponents(vm.foods.selected.animal, vm.currentPage).then(function (data) {
    //  });
    for (var i = 0; i < 20; i++) {
+
+
     vm.columns.push({
      'name': 'mouse',
      'columnClass': 'colum-1',
+     'cards': []
     })
    }
   }
