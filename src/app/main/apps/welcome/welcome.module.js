@@ -17,7 +17,7 @@
    url: '/welcome',
    views: {
     'content@app': {
-     templateUrl: 'src/app/main/apps/welcome/welcome.html',
+     templateUrl: 'src/app/main/apps/welcome/welcome-vr.html',
      controller: 'WelcomeController as vm'
     }
    },

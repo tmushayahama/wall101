@@ -23,5 +23,6 @@
           // Apps
           'app.welcome',
           'app.components',
+          'app.graphics.fabric'
          ]);
 })();

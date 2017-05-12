@@ -4,7 +4,21 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>CatsPointer</title>
+  <title>Wall 101</title>
+  <script src="src/lib/aframe/aframe-master.min.js" type="text/javascript"></script>
+  <script src="src/lib/aframe-extras/aframe-extras.min.js"></script>
+  <script src="src/lib/aframe-extras/lzma.js"></script>
+  <script src="src/lib/aframe-extras/ctm.js"></script>
+  <script src="src/lib/aframe-extras/CTMLoader.js"></script>
+  <script src="src/lib/aframe-extras/aframe-teleport-controls.min.js"></script>
+  <script src="src/lib/aframe-extras/spheres_anim.js"></script>
+  <script src="src/lib/aframe-extras/anim_1.js"></script>
+  <script src="src/lib/aframe-extras/anim_2.js"></script>
+  <script src="src/lib/aframe-extras/mocap.js"></script>
+  <script src="src/lib/aframe-extras/envMapMaterial.js"></script>
+  <script src="src/lib/aframe-extras/ctm_component.js"></script>
+  <script src="src/lib/aframe-extras/mobile_component.js"></script>
+
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -53,6 +67,8 @@
        class="{{state.current.bodyClass|| ''}}">
 
   <div id="main" class="" ui-view="main" layout="column"></div>
+
+  <script src="lib/p5/p5.min.js"></script>
 
   <!-- build:js(src) scripts/vendor.js -->
   <!-- bower:js -->
@@ -139,15 +155,19 @@
   <script src="../bower_components/satellizer/dist/satellizer.js"></script>
   <script src="../bower_components/javascript-detect-element-resize/detect-element-resize.js"></script>
   <script src="../bower_components/angular-gridster/src/angular-gridster.js"></script>
+  <script src="../bower_components/fabric.js/dist/fabric.min.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
   <!-- inject:js -->
-  <script src="src/app/core/core.module.js"></script>
-  <script src="src/app/main/apps/components/directives/gb-card/gb-card.directive.js"></script>
+  <script src="src/app/main/apps/graphics/fabric/fabric.module.js"></script>
+  <script src="src/app/main/apps/graphics/fabric/directives/draw/draw.directive.js"></script>
   <script src="src/app/main/apps/components/components.module.js"></script>
+  <script src="src/app/main/apps/components/directives/gb-card/gb-card.directive.js"></script>
   <script src="src/app/main/apps/components/dialogs/component/component-dialog.controller.js"></script>
+  <script src="src/app/main/apps/graphics/fabric/services/fabric.service.js"></script>
+  <script src="src/app/main/apps/graphics/fabric/services/fabric-canvas.service.js"></script>
   <script src="src/app/main/apps/welcome/welcome.module.js"></script>
   <script src="src/app/main/apps/welcome/services/welcome.service.js"></script>
   <script src="src/app/main/apps/components/views/calibrate.controller.js"></script>
@@ -155,9 +175,10 @@
   <script src="src/app/main/apps/components/services/component.service.js"></script>
   <script src="src/app/main/apps/welcome/welcome.controller.js"></script>
   <script src="src/app/main/apps/components/components.controller.js"></script>
-  <script src="src/app/core/directives/ms-widget/ms-widget.directive.js"></script>
+  <script src="src/app/core/core.module.js"></script>
   <script src="src/app/core/directives/ms-timeline/ms-timeline.js"></script>
   <script src="src/app/core/directives/ms-stepper/ms-stepper.directive.js"></script>
+  <script src="src/app/core/directives/ms-widget/ms-widget.directive.js"></script>
   <script src="src/app/core/directives/ms-splash-screen/ms-splash-screen.directive.js"></script>
   <script src="src/app/core/directives/ms-sidenav-helper/ms-sidenav-helper.directive.js"></script>
   <script src="src/app/core/directives/ms-shortcuts/ms-shortcuts.directive.js"></script>
@@ -165,11 +186,11 @@
   <script src="src/app/core/directives/ms-scroll/ms-scroll.directive.js"></script>
   <script src="src/app/core/directives/ms-responsive-table/ms-responsive-table.directive.js"></script>
   <script src="src/app/core/directives/ms-navigation/ms-navigation.directive.js"></script>
-  <script src="src/app/core/directives/ms-random-class/ms-random-class.directive.js"></script>
   <script src="src/app/core/directives/ms-nav/ms-nav.directive.js"></script>
+  <script src="src/app/core/directives/ms-random-class/ms-random-class.directive.js"></script>
   <script src="src/app/core/directives/ms-material-color-picker/ms-material-color-picker.directive.js"></script>
-  <script src="src/app/core/directives/ms-info-bar/ms-info-bar.directive.js"></script>
   <script src="src/app/core/directives/ms-masonry/ms-masonry.directive.js"></script>
+  <script src="src/app/core/directives/ms-info-bar/ms-info-bar.directive.js"></script>
   <script src="src/app/core/directives/ms-form-wizard/ms-form-wizard.directive.js"></script>
   <script src="src/app/core/directives/ms-datepicker-fix/ms-datepicker-fix.directive.js"></script>
   <script src="src/app/core/directives/ms-card/ms-card.directive.js"></script>
@@ -182,10 +203,10 @@
   <script src="src/app/core/theming/gb-themes.constant.js"></script>
   <script src="src/app/core/theming/gb-palettes.constant.js"></script>
   <script src="src/app/core/theming/gb-generator.service.js"></script>
+  <script src="src/app/core/theme-options/theme-options.directive.js"></script>
   <script src="src/app/core/services/ms-utils.service.js"></script>
   <script src="src/app/core/services/ms-api.provider.js"></script>
   <script src="src/app/core/services/api-resolver.service.js"></script>
-  <script src="src/app/core/theme-options/theme-options.directive.js"></script>
   <script src="src/app/core/directives/highlight.directive.js"></script>
   <script src="src/app/core/filters/tag.filter.js"></script>
   <script src="src/app/core/filters/filterByPropIds.filter.js"></script>
@@ -193,9 +214,9 @@
   <script src="src/app/core/filters/basic.filter.js"></script>
   <script src="src/app/core/filters/altDate.filter.js"></script>
   <script src="src/app/core/config/fuse-config.provider.js"></script>
+  <script src="src/app/registration-panel/registration-panel.controller.js"></script>
   <script src="src/app/toolbar/toolbar.module.js"></script>
   <script src="src/app/toolbar/toolbar.controller.js"></script>
-  <script src="src/app/registration-panel/registration-panel.controller.js"></script>
   <script src="src/app/navigation/navigation.module.js"></script>
   <script src="src/app/navigation/navigation.controller.js"></script>
   <script src="src/app/index.module.js"></script>

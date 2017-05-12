@@ -1,6 +1,5 @@
 <div class="gb-wall-canvas gb-day-1" layout="column" layout-align="start start" flex
-     ng-click="vm.getComponent($event)"
-     ng-class="vm.component.background_class">
+     >
  <div class="gb-cat-holder"  layout="column" layout-align="center center">
   <img ng-src="src/assets/images/animals/{{vm.component.component_picture_url}}" alt=""
        ng-style="vm.component.pictureStyle">
@@ -20,28 +19,14 @@
  </div>
  <div class="gb-wall">
   <div hide class="sprite right"></div>
-  <div class="gb-horizontal-scroll gb-columns-scroll" layout="column" layout-align="start stretch">
-   <md-button class="gb-left-scroll"
-              ng-click="$root.scrollHorizontal('#gb-featured', -400)"aria-label="Scroll Left">
-    <md-icon md-font-icon="icon-chevron-left"></md-icon>
-   </md-button>
-   <div id="gb-featured" class="board-list flex-scrollable only-x"
-        layout="row" layout-align="start" ms-scroll flex layout-nowrap>
-    <iframe style="height: 830px; width: 470px;" src="http://games.gamepix.com/play/40115" width="470" height="830" frameborder="0" scrolling="no"></iframe>
+  <div gb-column template="'src/app/main/apps/graphics/fabric/directives/draw/templates/template-1/template-1.html'"
+       class="gb-wall-graphics"
+       class="gb-column">
+   <div ng-if="false" gridster="gridsterOpts" class="gb-card-ads-1">
+    <div ng-if="false" class="gb-card-ad-1" gridster-item="item" ng-repeat="item in column.cards">
 
-    <div class="gb-column" ng-repeat="column in vm.columns"
-         ng-class="column.columnClass">
-     <div gridster="gridsterOpts" class="gb-card-ads-1">
-      <div class="gb-card-ad-1" gridster-item="item" ng-repeat="item in column.cards">
-
-      </div>
-     </div>
     </div>
    </div>
-   <md-button class="gb-right-scroll"
-              ng-click="$root.scrollHorizontal('#gb-featured', 400)"aria-label="Scroll Left">
-    <md-icon md-font-icon="icon-chevron-right"></md-icon>
-   </md-button>
   </div>
  </div>
 </div>

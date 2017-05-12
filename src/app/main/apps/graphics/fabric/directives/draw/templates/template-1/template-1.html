@@ -1,0 +1,13 @@
+<div class='image-builder'>
+ <div class="gb-horizontal-scroll gb-columns-scroll" layout="column" layout-align="start stretch">
+  <md-button class="gb-left-scroll"
+             ng-click="move(-200)" aria-label="Scroll Left">
+   <md-icon md-font-icon="icon-chevron-left"></md-icon>
+  </md-button>
+  <md-button class="gb-right-scroll"
+             ng-click="move(2000); //addImage()" aria-label="Scroll Left">
+   <md-icon md-font-icon="icon-chevron-right"></md-icon>
+  </md-button>
+  <canvas fabric='fabric'></canvas>
+ </div>
+</div>

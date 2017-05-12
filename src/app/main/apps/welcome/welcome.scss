@@ -66,6 +66,10 @@ $color-6: #077568;
 	to { background-position: -612px; }
 }
 
+.gb-wall-graphics {
+ @include position(fixed, 0 0 0 0);
+}
+
 .gb-wall-canvas {
  @include position(fixed, 0 0 0 0);
  background-size: 100% auto;
@@ -78,7 +82,7 @@ $color-6: #077568;
  overflow: hidden;
 
  &.gb-day-1 {
-  background-image: url(../../../src/assets/images/backgrounds/background-1.jpg);
+  //background-image: url(../../../src/assets/images/backgrounds/background-1.jpg);
 
   .gb-wall {
    @include position(absolute, 120px 0 0 0);

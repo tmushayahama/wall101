@@ -4,7 +4,21 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>CatsPointer</title>
+  <title>Wall 101</title>
+  <script src="src/lib/aframe/aframe-master.min.js" type="text/javascript"></script>
+  <script src="src/lib/aframe-extras/aframe-extras.min.js"></script>
+  <script src="src/lib/aframe-extras/lzma.js"></script>
+  <script src="src/lib/aframe-extras/ctm.js"></script>
+  <script src="src/lib/aframe-extras/CTMLoader.js"></script>
+  <script src="src/lib/aframe-extras/aframe-teleport-controls.min.js"></script>
+  <script src="src/lib/aframe-extras/spheres_anim.js"></script>
+  <script src="src/lib/aframe-extras/anim_1.js"></script>
+  <script src="src/lib/aframe-extras/anim_2.js"></script>
+  <script src="src/lib/aframe-extras/mocap.js"></script>
+  <script src="src/lib/aframe-extras/envMapMaterial.js"></script>
+  <script src="src/lib/aframe-extras/ctm_component.js"></script>
+  <script src="src/lib/aframe-extras/mobile_component.js"></script>
+
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -38,6 +52,8 @@
        class="{{state.current.bodyClass|| ''}}">
 
   <div id="main" class="" ui-view="main" layout="column"></div>
+
+  <script src="lib/p5/p5.min.js"></script>
 
   <!-- build:js(src) scripts/vendor.js -->
   <!-- bower:js -->
