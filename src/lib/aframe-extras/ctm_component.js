@@ -48,7 +48,7 @@ AFRAME.registerComponent('ctm', {
 
             }*/
 
-        }, { useWorker: true, worker: new Worker( "js/CTMWorker.js" ) } );
+        }, { useWorker: true, worker: new Worker( "src/lib/aframe-extras/js/CTMWorker.js" ) } );
 
 
 

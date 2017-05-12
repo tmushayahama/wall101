@@ -23,7 +23,7 @@ AFRAME.registerComponent('anim_2', {
           spotNumber = 20;
         }
 
-        var r = "textures/cube/anim2/";
+        var r = "src/assets/textures/cube/anim2/";
         var urls = [ r + "posx.png", r + "negx.png",
                      r + "posy.png", r + "negy.png",
                      r + "posz.png", r + "negz.png" ];

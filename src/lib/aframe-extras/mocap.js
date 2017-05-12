@@ -18,7 +18,7 @@ AFRAME.registerComponent('mocap', {
 
         var spotScale = .1;
 
-        var r = "textures/cube/hall/";
+        var r = "src/assets/textures/cube/hall/";
         var urls = [ r + "posx.png", r + "negx.png",
                      r + "posy.png", r + "negy.png",
                      r + "posz.png", r + "negz.png" ];

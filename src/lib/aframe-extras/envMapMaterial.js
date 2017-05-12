@@ -7,7 +7,7 @@ AFRAME.registerShader('envMapMaterial', {
      */
     init: function (data) {
 
-        //var r = "textures/cube/hall/";
+        //var r = "src/assets/textures/cube/hall/";
         var r = data.src;
         var urls = [ r + "posx.png", r + "negx.png",
                      r + "posy.png", r + "negy.png",
